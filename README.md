@@ -3,7 +3,7 @@
 **Παρακολούθηση UPS για Windows μέσω NUT (Network UPS Tools)**
 **UPS monitoring for Windows through NUT (Network UPS Tools)**
 
-![version](https://img.shields.io/badge/version-0.2-4f7cff)
+![version](https://img.shields.io/badge/version-0.3-4f7cff)
 ![platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0b1020)
 ![python](https://img.shields.io/badge/python-3.12%2B-3776ab)
 ![language](https://img.shields.io/badge/UI-Ελληνικά%20%7C%20English-a78bfa)
@@ -43,7 +43,7 @@
 
 ### Εγκατάσταση
 
-1. Κατεβάστε το `MyUPS_0.2.zip` από τα [Releases](../../releases).
+1. Κατεβάστε το `MyUPS_0.3.zip` από τα [Releases](../../releases).
 2. Αποσυμπιέστε τον φάκελο `MyUPS` σε φάκελο με δικαίωμα εγγραφής, π.χ. `C:\MyUPS`.
    Όχι στο `C:\Program Files`, γιατί η εφαρμογή γράφει το `NUT\etc\ups.conf`.
 3. Συνδέστε το UPS με USB και ανοίξτε το `MyUPS.exe`.
@@ -126,7 +126,7 @@ python -m pip install pystray pillow pyinstaller
 Τρέξτε το `MyUPS_py2exe.bat`. Φτιάχνει:
 
 - `dist\MyUPS\MyUPS.exe`: την εφαρμογή
-- `release\MyUPS_0.2.zip`: πακέτο διανομής με το NUT, **χωρίς** τα προσωπικά `ups.conf`, `upsd.users`, `upsmon.conf`
+- `release\MyUPS_0.3.zip`: πακέτο διανομής με το NUT, **χωρίς** τα προσωπικά `ups.conf`, `upsd.users`, `upsmon.conf`
 
 Χρησιμοποιείτε πάντα `python -m PyInstaller`. Το σκέτο `pyinstaller` μπορεί να τρέξει από άλλη εγκατάσταση Python που δεν έχει τις βιβλιοθήκες.
 
@@ -140,7 +140,7 @@ python MyUPS.py --demo
 
 | Πρόβλημα | Λύση |
 |---|---|
-| «Χωρίς επικοινωνία με το UPS» | Ρυθμίσεις → NUT → **Επανεκκίνηση υπηρεσιών NUT**. Ελέγξτε το καλώδιο USB. |
+| «Χωρίς επικοινωνία με το UPS» | Ρυθμίσεις → NUT → **Επανεκκίνηση υπηρεσιών NUT**. Ελέγξτε το καλώδιο USB. Η έξοδος του driver καταγράφεται στο `%APPDATA%\MyUPS\nut.log` (κουμπί **Αρχείο καταγραφής NUT**). |
 | Το `nut-scanner` δεν βρίσκει τίποτα | Αλλαγή driver με το Zadig (δείτε παραπάνω). |
 | `ERR ACCESS-DENIED` στο Beeper / Τεστ | Λάθος χρήστης ή κωδικός, ή δεν έγινε επανεκκίνηση του upsd μετά την αλλαγή του `upsd.users`. |
 | Το Beeper δεν δείχνει την πραγματική κατάσταση | Κάποια UPS δεν την αναφέρουν. Δεξί κλικ στο κουμπί διορθώνει την ένδειξη χωρίς να στείλει εντολή. |
@@ -173,7 +173,7 @@ MyUPS is a system tray app that shows what your UPS is doing: where the power co
 
 ### Installation
 
-1. Download `MyUPS_0.2.zip` from [Releases](../../releases).
+1. Download `MyUPS_0.3.zip` from [Releases](../../releases).
 2. Extract the `MyUPS` folder to a writable location, e.g. `C:\MyUPS`.
    Not `C:\Program Files`, because the app writes `NUT\etc\ups.conf`.
 3. Connect the UPS via USB and run `MyUPS.exe`.
@@ -230,7 +230,7 @@ python -m pip install pystray pillow pyinstaller
 Run `MyUPS_py2exe.bat`. It produces:
 
 - `dist\MyUPS\MyUPS.exe`: the app
-- `release\MyUPS_0.2.zip`: a distribution package with NUT, **without** your personal `ups.conf`, `upsd.users`, `upsmon.conf`
+- `release\MyUPS_0.3.zip`: a distribution package with NUT, **without** your personal `ups.conf`, `upsd.users`, `upsmon.conf`
 
 Test without a UPS (two simulated UPS, separate settings files):
 
